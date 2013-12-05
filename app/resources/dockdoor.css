@@ -1,0 +1,59 @@
+.door {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info {
+    width: 50%;
+    position: relative;
+    float: left;
+}
+
+.status {
+
+}
+
+.ready:after {
+    content: 'Ready for Pickup!'
+}
+
+.ready {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #6dbd57;
+    color: white;
+    padding: 12px;
+    margin-top: 25px;
+    width: 20%;
+}
+
+.loading:after {
+    content: 'Loading . . .';
+}
+
+.loading {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #f70708;
+    color: white;
+    padding: 12px;
+    margin-top: 25px;
+    width: 20%;
+}
+
+.waiting:after {
+    content: 'Waiting on bill . . .';
+}
+
+.waiting {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #f7df36;
+    color: black;
+    padding: 12px;
+    margin-top: 25px;
+    width: 20%;
+}
