@@ -14,15 +14,23 @@ Ext.application({
     name: 'DockDoor',
 
     requires: [
-        'Ext.MessageBox'
+        'Ext.MessageBox',
+        'Ext.data.proxy.JsonP',
+        'DockDoor.resources.GlobalVars'
     ],
 
     controllers: [
-        'Main'
+    ],
+
+    profiles: [
+        'Phone',
+        'Tablet'
     ],
 
     views: [
-        'Main'
+        'Doors',
+        'Plants',
+        'DoorMaint'
     ],
 
     stores: [
@@ -48,13 +56,6 @@ Ext.application({
         '1496x2048': 'resources/startup/1496x2048.png'
     },
 
-    launch: function() {
-        // Destroy the #appLoadingIndicator element
-        Ext.fly('appLoadingIndicator').destroy();
-
-        // Initialize the main view
-        Ext.Viewport.add(Ext.create('DockDoor.view.Main'));
-    },
 
     onUpdated: function() {
         Ext.Msg.confirm(

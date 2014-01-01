@@ -20,13 +20,20 @@ Ext.Loader.addClassPathMappings({
 });
 Ext.ClassManager.addNameAlternateMappings({
   "DockDoor.controller.Main": [],
+  "DockDoor.controller.phone.Phone": [],
+  "DockDoor.controller.tablet.Tablet": [],
   "DockDoor.model.Door": [],
   "DockDoor.model.Plant": [],
+  "DockDoor.profile.Phone": [],
+  "DockDoor.profile.Tablet": [],
+  "DockDoor.resources.GlobalVars": [],
   "DockDoor.store.Doors": [],
   "DockDoor.store.Plants": [],
+  "DockDoor.view.DoorMaint": [],
   "DockDoor.view.Doors": [],
-  "DockDoor.view.Main": [],
   "DockDoor.view.Plants": [],
+  "DockDoor.view.phone.Main": [],
+  "DockDoor.view.tablet.Main": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -651,18 +658,29 @@ Ext.ClassManager.addNameAlternateMappings({
 });
 Ext.ClassManager.addNameAliasMappings({
   "DockDoor.controller.Main": [],
+  "DockDoor.controller.phone.Phone": [],
+  "DockDoor.controller.tablet.Tablet": [],
   "DockDoor.model.Door": [],
   "DockDoor.model.Plant": [],
+  "DockDoor.profile.Phone": [],
+  "DockDoor.profile.Tablet": [],
+  "DockDoor.resources.GlobalVars": [],
   "DockDoor.store.Doors": [],
   "DockDoor.store.Plants": [],
+  "DockDoor.view.DoorMaint": [
+    "widget.doormaint"
+  ],
   "DockDoor.view.Doors": [
     "widget.doors"
   ],
-  "DockDoor.view.Main": [
-    "widget.main"
-  ],
   "DockDoor.view.Plants": [
     "widget.plants"
+  ],
+  "DockDoor.view.phone.Main": [
+    "widget.main"
+  ],
+  "DockDoor.view.tablet.Main": [
+    "widget.main"
   ],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],

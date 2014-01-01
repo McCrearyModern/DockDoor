@@ -7,7 +7,6 @@ Ext.define('DockDoor.view.Plants', {
             docked: 'top',
             title: 'Plants'
         }],
-        title: 'Plants',
         itemTpl: '{PLANTID}',
         store: 'Plants',
         emptyText: 'There are no plants to show.'

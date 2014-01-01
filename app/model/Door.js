@@ -41,6 +41,9 @@ Ext.define('DockDoor.model.Door', {
         },{
             name: 'CLASS',
             type: 'string'
+        },{
+            name: 'DOORSTS',
+            type: 'string'
         }]
 	}
 });

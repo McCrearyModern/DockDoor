@@ -3,57 +3,49 @@
     font-weight: bold;
 }
 
-.info {
-    width: 50%;
-    position: relative;
-    float: left;
-}
-
 .status {
 
 }
 
-.ready:after {
-    content: 'Ready for Pickup!'
+.ready:before {
+    content: '* Ready for Pickup!';
+    font-size: 13px;
+    font-weight: bold;
+    background-color: white;
+    color: #6dbd57;
 }
 
 .ready {
-    position: absolute;
-    top: 0;
-    right: 0;
+
     background-color: #6dbd57;
     color: white;
-    padding: 12px;
-    margin-top: 25px;
-    width: 20%;
+    padding: 5px;
 }
 
-.loading:after {
-    content: 'Loading . . .';
+.loading:before {
+    content: '* Loading . . .';
+    font-size: 13px;
+    font-weight: bold;
+    background-color: white;
+    color: #f74146;
 }
 
 .loading {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #f70708;
+    background-color: #f74146;
     color: white;
-    padding: 12px;
-    margin-top: 25px;
-    width: 20%;
+    padding: 5px;
 }
 
-.waiting:after {
-    content: 'Waiting on bill . . .';
+.waiting:before {
+    content: '* Waiting on bill . . .';
+    font-size: 13px;
+    font-weight: bold;
+    background-color: black;
+    color: #f7df36;
 }
 
 .waiting {
-    position: absolute;
-    top: 0;
-    right: 0;
     background-color: #f7df36;
     color: black;
-    padding: 12px;
-    margin-top: 25px;
-    width: 20%;
+    padding: 5px;
 }

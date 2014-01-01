@@ -3,26 +3,30 @@ Ext.define('DockDoor.view.Doors', {
     xtype: 'doors',
     config: {
         items: [{
-            xtype: 'toolbar',
+            xtype: 'titlebar',
             docked: 'top',
-            title: 'Dock Doors'
+            title: 'Doors',
+            items: [{
+                text: 'Refresh',
+                align: 'right',
+                iconCls: 'refresh',
+                itemId: 'refreshDoors'
+            }]
         }],
-        title: 'Doors',
         itemTpl: [
+            '<div class="{CLASS}">',
             '<div class="info">',
-                '<span class="door">{DOORDESC} </span> <br> ',
+                '<span class="info"> <b>{DOORDESC}</b> </span> <br> ',
                 '<b>Trailer: </b> {TRAILER} <br>',
+                '<b>Load#:</b> {LOAD} <br>',
                 '<b>Door Destination:</b> {DOORDEST} <br>',
             '</div>',
-            '<div class="status">',
-                '<b>Order Qty: </b> {ORDERQTY} <br>',
-                '<b>Shipped  : </b> {SHIPPED} <br>',
-                '<b>Open     : </b> {OPEN} <br>',
-            '</div>',
-            '<div class="{CLASS}"></div>'
+            '</div>'
+
         ],
         store: 'Doors',
-        emptyText: 'Select a plant to view available doors.',
+        striped: true,
+        emptyText: 'Select a plant to view available doors.'
 
         // Adds pull down refresh function.
         /*plugins: [{

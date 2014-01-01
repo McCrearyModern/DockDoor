@@ -15,6 +15,14 @@ Ext.define('DockDoor.store.Doors',{
                 type : 'json',
                 rootProperty : 'DOORS'
             }
+        },
+
+        listeners: {
+            beforeload: function() {
+                Ext.apply(this.getProxy().config.extraParams, {
+                    PLANTID: DockDoor.resources.GlobalVars.getCurrentPlant()
+                });
+            }
         }
-    }    
+    }
 });

@@ -7,7 +7,8 @@ Ext.define('DockDoor.controller.Main', {
     config: {
         refs: {
             PlantList : 'plants',
-            DoorList: 'doors'
+            DoorList: 'doors',
+            RefreshDoors: 'doors #refreshDoors'
         },
 
         control: {
@@ -15,17 +16,22 @@ Ext.define('DockDoor.controller.Main', {
                 itemtap: 'onItemTapPlantList'
             },
             DoorList: {
-                itemswipe: 'onItemSwipeDoorList'
+                itemswipe: 'onItemSwipeDoorList',
+                itemtap: 'onItemTapDoorList'
+            },
+            RefreshDoors: {
+                tap: 'onTapRefreshDoors'
             }
         }
 
 
     },
 
-    onItemTapPlantList: function(th, index, target, record) {
+    onItemTapPlantList: function(list, index, target, record) {
+        DockDoor.resources.GlobalVars.setCurrentPlant(record.get('PLANTID'));
+
         var doors = Ext.getStore('Doors');
         doors.removeAll();
-        doors.getProxy().config.extraParams.PLANTID = record.get('PLANTID');
         doors.load();
     },
 
@@ -53,6 +59,20 @@ Ext.define('DockDoor.controller.Main', {
                 }
             );
         }
+    },
+
+    onItemTapDoorList: function(list, index, target, record) {
+
+    },
+
+    onTapRefreshDoors: function() {
+        var doors = Ext.getStore('Doors');
+        doors.removeAll();
+        doors.load();
+    },
+
+    init: function() {
+        this.callParent(arguments);
     }
 
 });
