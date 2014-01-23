@@ -7,8 +7,16 @@ Ext.define('DockDoor.profile.Tablet', {
 
     config: {
         name: 'Tablet',
-        views: ['Main'],
-        controllers: ['Tablet']
+        views: [
+            'Main',
+            'DoorResetCard',
+            'DoorReset',
+            'DoorDestination',
+            'DoorsDestList'
+        ],
+        controllers: ['Tablet'],
+        stores: [
+        ]
     },
 
     isActive: function() {

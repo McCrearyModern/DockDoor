@@ -35,7 +35,8 @@ Ext.application({
 
     stores: [
         'Plants',
-        'Doors'
+        'Doors',
+        'DoorsDest'
     ],
 
     icon: {

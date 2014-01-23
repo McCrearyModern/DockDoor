@@ -6,9 +6,16 @@ Ext.define('DockDoor.controller.Main', {
 
     config: {
         refs: {
-            PlantList : 'plants',
+            PlantList : 'main #plantsOnMain',
             DoorList: 'doors',
-            RefreshDoors: 'doors #refreshDoors'
+            RefreshDoors: 'doors #refreshDoors',
+            DoorResetCard: 'doorresetcard',
+            DoorReset: 'doorreset',
+
+            // buttons
+            ClearDoor: 'doorreset #clearDoor',
+            Move2NewDoor: 'doorreset #move2NewDoor',
+            Move2Daily: 'doorreset #move2Daily'
         },
 
         control: {
@@ -23,8 +30,6 @@ Ext.define('DockDoor.controller.Main', {
                 tap: 'onTapRefreshDoors'
             }
         }
-
-
     },
 
     onItemTapPlantList: function(list, index, target, record) {
@@ -39,25 +44,15 @@ Ext.define('DockDoor.controller.Main', {
         var me = this;
 
         if (e.direction == 'left' || e.direction == 'right') {
-            Ext.Msg.confirm('Dock Status Change', 'Are you sure you want to mark Trailer # ' + record.get('TRAILER') + ' as picked up?',
-                function(answer, val) {
-                    if (answer == 'yes') {
-                        Ext.data.JsonP.request({
-                            url: 'http://mccrearymodern.com:6032/mobile/dockdoor.pgm',
-                            callbackKey: 'callback',
-                            params: {
-                                DOORID: record.get('DOORID'),
-                                PLANTID: record.get('PLANTID'),
-                                action: 'resetDoor'
-                            },
-                            success: function() {
-                                var doorStore = Ext.getStore('Doors');
-                                doorStore.load();
-                            }
-                        });
-                    }
-                }
-            );
+            if (!me.getDoorReset()) {
+                Ext.Viewport.add({
+                    xtype: 'doorresetcard'
+                });
+            } else {
+                me.getDoorResetCard().show();
+            }
+            me.getDoorResetCard().setActiveItem(0);
+            this.getDoorReset().setCurrentDoor(record);
         }
     },
 

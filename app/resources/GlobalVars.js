@@ -5,7 +5,8 @@ Ext.define('DockDoor.resources.GlobalVars', {
     singleton: true,
 
     config: {
-        currentPlant: null
+        currentPlant: null,
+        destPlant: null
     },
 
     constructor: function(config) {

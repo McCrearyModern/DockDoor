@@ -3,7 +3,7 @@ Ext.define('DockDoor.view.tablet.Main', {
     xtype: 'main',
 
     requires: [
-
+        'DockDoor.view.tablet.DoorResetCard'
     ],
     config: {
         tabBarPosition: 'bottom',
@@ -22,6 +22,7 @@ Ext.define('DockDoor.view.tablet.Main', {
                     title: 'Mobile Dock Door App'
                 },{
                     xtype: 'plants',
+                    itemId: 'plantsOnMain',
                     flex: 1,
                     style: 'border: 2px grey solid'
                 },{

@@ -23,16 +23,22 @@ Ext.ClassManager.addNameAlternateMappings({
   "DockDoor.controller.phone.Phone": [],
   "DockDoor.controller.tablet.Tablet": [],
   "DockDoor.model.Door": [],
+  "DockDoor.model.DoorDest": [],
   "DockDoor.model.Plant": [],
   "DockDoor.profile.Phone": [],
   "DockDoor.profile.Tablet": [],
   "DockDoor.resources.GlobalVars": [],
   "DockDoor.store.Doors": [],
+  "DockDoor.store.DoorsDest": [],
   "DockDoor.store.Plants": [],
   "DockDoor.view.DoorMaint": [],
   "DockDoor.view.Doors": [],
   "DockDoor.view.Plants": [],
   "DockDoor.view.phone.Main": [],
+  "DockDoor.view.tablet.DoorDestination": [],
+  "DockDoor.view.tablet.DoorReset": [],
+  "DockDoor.view.tablet.DoorResetCard": [],
+  "DockDoor.view.tablet.DoorsDestList": [],
   "DockDoor.view.tablet.Main": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
@@ -661,11 +667,13 @@ Ext.ClassManager.addNameAliasMappings({
   "DockDoor.controller.phone.Phone": [],
   "DockDoor.controller.tablet.Tablet": [],
   "DockDoor.model.Door": [],
+  "DockDoor.model.DoorDest": [],
   "DockDoor.model.Plant": [],
   "DockDoor.profile.Phone": [],
   "DockDoor.profile.Tablet": [],
   "DockDoor.resources.GlobalVars": [],
   "DockDoor.store.Doors": [],
+  "DockDoor.store.DoorsDest": [],
   "DockDoor.store.Plants": [],
   "DockDoor.view.DoorMaint": [
     "widget.doormaint"
@@ -678,6 +686,18 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "DockDoor.view.phone.Main": [
     "widget.main"
+  ],
+  "DockDoor.view.tablet.DoorDestination": [
+    "widget.doordestination"
+  ],
+  "DockDoor.view.tablet.DoorReset": [
+    "widget.doorreset"
+  ],
+  "DockDoor.view.tablet.DoorResetCard": [
+    "widget.doorresetcard"
+  ],
+  "DockDoor.view.tablet.DoorsDestList": [
+    "widget.doorsdestlist"
   ],
   "DockDoor.view.tablet.Main": [
     "widget.main"
