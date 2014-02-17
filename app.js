@@ -30,13 +30,15 @@ Ext.application({
     views: [
         'Doors',
         'Plants',
-        'DoorMaint'
+        'DoorMaint',
+        'Yard'
     ],
 
     stores: [
         'Plants',
         'Doors',
-        'DoorsDest'
+        'DoorsDest',
+        'Yards'
     ],
 
     icon: {

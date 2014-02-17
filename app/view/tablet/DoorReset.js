@@ -23,12 +23,12 @@ Ext.define('DockDoor.view.tablet.DoorReset', {
             itemId: 'clearDoor'
         },{
             xtype: 'button',
-            text: 'Move to New Door',
+            text: 'Move to Door',
             flex: 1,
             itemId: 'move2NewDoor'
         },{
             xtype: 'button',
-            text: 'Move To Daily Hold',
+            text: 'Move To Daily',
             flex: 1,
             itemId: 'move2Daily'
         }]

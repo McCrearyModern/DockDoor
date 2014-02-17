@@ -25,15 +25,19 @@ Ext.ClassManager.addNameAlternateMappings({
   "DockDoor.model.Door": [],
   "DockDoor.model.DoorDest": [],
   "DockDoor.model.Plant": [],
+  "DockDoor.model.Yard": [],
   "DockDoor.profile.Phone": [],
   "DockDoor.profile.Tablet": [],
   "DockDoor.resources.GlobalVars": [],
   "DockDoor.store.Doors": [],
   "DockDoor.store.DoorsDest": [],
   "DockDoor.store.Plants": [],
+  "DockDoor.store.Yards": [],
   "DockDoor.view.DoorMaint": [],
   "DockDoor.view.Doors": [],
   "DockDoor.view.Plants": [],
+  "DockDoor.view.Yard": [],
+  "DockDoor.view.YardMaint": [],
   "DockDoor.view.phone.Main": [],
   "DockDoor.view.tablet.DoorDestination": [],
   "DockDoor.view.tablet.DoorReset": [],
@@ -669,12 +673,14 @@ Ext.ClassManager.addNameAliasMappings({
   "DockDoor.model.Door": [],
   "DockDoor.model.DoorDest": [],
   "DockDoor.model.Plant": [],
+  "DockDoor.model.Yard": [],
   "DockDoor.profile.Phone": [],
   "DockDoor.profile.Tablet": [],
   "DockDoor.resources.GlobalVars": [],
   "DockDoor.store.Doors": [],
   "DockDoor.store.DoorsDest": [],
   "DockDoor.store.Plants": [],
+  "DockDoor.store.Yards": [],
   "DockDoor.view.DoorMaint": [
     "widget.doormaint"
   ],
@@ -683,6 +689,12 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "DockDoor.view.Plants": [
     "widget.plants"
+  ],
+  "DockDoor.view.Yard": [
+    "widget.yard"
+  ],
+  "DockDoor.view.YardMaint": [
+    "widget.yardmaint"
   ],
   "DockDoor.view.phone.Main": [
     "widget.main"

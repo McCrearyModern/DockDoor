@@ -12,8 +12,8 @@ Ext.define('DockDoor.view.tablet.DoorResetCard', {
         modal: true,
         centered: true,
         padding: 8,
-        height: Ext.Viewport.getWindowHeight() * 0.50,
-        width: Ext.Viewport.getWindowWidth() * 0.50,
+        height: '40%', //Ext.Viewport.getWindowHeight() * 0.50,
+        width: '75%',  //Ext.Viewport.getWindowWidth() * 0.50,
         hideOnMaskTap: true,
         layout: 'card',
         defaults: {

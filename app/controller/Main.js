@@ -9,6 +9,8 @@ Ext.define('DockDoor.controller.Main', {
             PlantList : 'main #plantsOnMain',
             DoorList: 'doors',
             RefreshDoors: 'doors #refreshDoors',
+            YardMaint: 'yardmaint',
+            RefreshYard: 'yard #refreshYard',
             DoorResetCard: 'doorresetcard',
             DoorReset: 'doorreset',
 
@@ -28,6 +30,18 @@ Ext.define('DockDoor.controller.Main', {
             },
             RefreshDoors: {
                 tap: 'onTapRefreshDoors'
+            },
+            RefreshYard: {
+                tap: 'onTapRefreshYard'
+            },
+            'yard #addYard': {
+                tap: 'onTapAddYard'
+            },
+            'yardmaint #btnSaveYard': {
+                tap: 'onTapSaveYard'
+            },
+            'yardmaint #btnCancelYard': {
+                tap: 'onTapCancelYard'
             }
         }
     },
@@ -64,6 +78,48 @@ Ext.define('DockDoor.controller.Main', {
         var doors = Ext.getStore('Doors');
         doors.removeAll();
         doors.load();
+    },
+
+    onTapRefreshYard: function() {
+        var yard = Ext.getStore('Yards');
+        yard.removeAll();
+        yard.load();
+    },
+
+    onTapAddYard: function() {
+        this.getYardMaint().show();
+        this.getYardMaint().down('textfield[name=YARDTRLR]').focus();
+    },
+
+    onTapSaveYard: function() {
+        var controller = this;
+        var fieldValues = this.getYardMaint().getValues();
+        Ext.apply(fieldValues, {
+            action: 'saveYard'
+        });
+
+        Ext.data.JsonP.request({
+            url: 'http://mccrearymodern.com:6032/mobile/dockdoor.pgm',
+            params: fieldValues,
+            success: function(response) {
+                var yard = Ext.getStore('Yards');
+                yard.removeAll();
+                yard.load();
+                controller.onTapCancelYard();
+            },
+            failure: function() {
+
+            }
+        });
+    },
+
+    onTapCancelYard: function() {
+        var yardMaint = this.getYardMaint();
+        yardMaint.hide();
+
+        yardMaint.down('textfield[name=YARDTRLR]').setValue('');
+        yardMaint.down('textfield[name=YARDLOAD]').setValue('');
+        yardMaint.down('textfield[name=YARDDEST]').setValue('');
     },
 
     init: function() {

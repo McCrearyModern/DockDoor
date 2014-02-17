@@ -28,6 +28,9 @@ Ext.define('DockDoor.controller.tablet.Tablet', {
             },
             DestDoorList: {
                 itemtap: 'onItemTapDoorDestList'
+            },
+            'yard': {
+                itemswipe: 'onItemSwipeYard'
             }
         }
     },
@@ -120,6 +123,9 @@ Ext.define('DockDoor.controller.tablet.Tablet', {
                         success: function() {
                             var doorStore = Ext.getStore('Doors');
                             doorStore.load();
+
+                            Ext.getStore('Yards').load();
+                            me.getDoorResetCard().hide();
                         }
                     });
 
@@ -160,5 +166,30 @@ Ext.define('DockDoor.controller.tablet.Tablet', {
                 me.getDoorResetCard().hide();
             }
         });
+    },
+
+    onItemSwipeYard: function(list, index,target,record, e, eOpts) {
+        var me = this;
+
+        if (e.direction == 'left' || e.direction == 'right') {
+            Ext.Msg.confirm('Dock Status Change', 'Remove Trailer # ' + record.get('YARDTRLR') +
+                ' from the yard?',
+                function(answer, val) {
+                    if (answer == 'yes') {
+                        Ext.data.JsonP.request({
+                            url: 'http://mccrearymodern.com:6032/mobile/dockdoor.pgm',
+                            callbackKey: 'callback',
+                            params: {
+                                TRAILER: record.get('YARDTRLR'),
+                                action: 'removeYard'
+                            },
+                            success: function() {
+                                Ext.getStore('Yards').load();
+                            }
+                        });
+                    }
+                }
+            );
+        }
     }
 });

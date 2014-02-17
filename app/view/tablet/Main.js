@@ -3,7 +3,8 @@ Ext.define('DockDoor.view.tablet.Main', {
     xtype: 'main',
 
     requires: [
-        'DockDoor.view.tablet.DoorResetCard'
+        'DockDoor.view.tablet.DoorResetCard',
+        'DockDoor.view.YardMaint'
     ],
     config: {
         tabBarPosition: 'bottom',
@@ -27,8 +28,21 @@ Ext.define('DockDoor.view.tablet.Main', {
                     style: 'border: 2px grey solid'
                 },{
                     xtype: 'doors',
-                    flex: 3,
+                    flex: 4,
                     margin: '0 0 0 10'
+                },{
+                    xtype: 'container',
+                    flex: 2,
+                    layout: 'vbox',
+                    items: [{
+                        xtype: 'yard',
+                        flex: 2,
+                        margin: '0 0 0 10'
+                    },{
+                        xtype: 'yardmaint',
+                        flex: 1,
+                        hidden: true
+                    }]
                 }]
             }]
     }
